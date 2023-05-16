@@ -10,11 +10,12 @@ const EmployeeView = (props) => {
     <div>      
       <h1>{employee.firstname}</h1>
       <h3>{employee.department}</h3>
+      <Link to={`/editemployee/${employee.id}`}>Edit employee information</Link>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
         <div>Assigned tasks:
         {assignedTasks.map( task => {
           return (
-            <div key={task.id}>
+            <div key={task.id}>s
             <Link to={`/task/${task.id}`}>
               <h4>{task.title}</h4>
             </Link>

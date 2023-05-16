@@ -65,6 +65,14 @@ export const editTask = (task) => {
   };
 };
 
+
+export const editEmployee = (employee) => {
+  return {
+    type: at.EDIT_EMPLOYEE,
+    payload: employee,
+  };
+};
+
 //Single task
 export const fetchTask = (task) => {
   return {
