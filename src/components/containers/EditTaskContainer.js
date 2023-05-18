@@ -44,6 +44,8 @@ class EditTaskContainer extends Component {
         this.state = {
           title: "", 
           description: "",
+          completion: "",
+          priority: "",
           employeeId: null, 
           redirect: false, 
           redirectId: null,
@@ -58,6 +60,8 @@ class EditTaskContainer extends Component {
         this.setState({
             title: this.props.task.title, 
             description: this.props.task.description,
+            completion: this.props.task.completion,
+            priority: this.props.task.priority,
             employeeId: this.props.task.employeeId, 
         });
       }
@@ -94,6 +98,8 @@ class EditTaskContainer extends Component {
             id: this.props.task.id,
             title: this.state.title,
             description: this.state.description,
+            completion: this.state.completion,
+            priority: this.state.priority,
             employeeId: this.state.employeeId
         };
         
@@ -130,7 +136,15 @@ class EditTaskContainer extends Component {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
-            <input type="text" name="description" value={this.state.timeslot || ''} placeholder={task.timeslot} onChange={(e) => this.handleChange(e)}/>
+            <input type="text" name="description" value={this.state.description || ''} placeholder={task.description} onChange={(e) => this.handleChange(e)}/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority: </label>
+            <input type="text" name="priority" value={this.state.priority || ''} placeholder={task.priority} onChange={(e) => this.handleChange(e)}/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Completion: </label>
+            <input type="text" name="completion" value={this.state.completion || ''} placeholder={task.completion} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
             <select onChange={(e) => this.handleSelectChange(e)}>
