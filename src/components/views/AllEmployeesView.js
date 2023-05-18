@@ -25,7 +25,7 @@ const AllEmployeesView = (props) => {
         return (
           <tr key={employee.id}>
             <td>
-          <Link to={`/employee/${employee.id}`}>
+          <Link to={`/employee/${employee.id}`} class ="listStyle">
             {name}
           </Link></td>
           <td>{employee.department}</td>
