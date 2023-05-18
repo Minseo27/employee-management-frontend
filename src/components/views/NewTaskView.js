@@ -22,10 +22,6 @@ const NewTaskView = (props) => {
           <input type="text" name="description" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
-
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>employeeId: </label>
-          <input type="text" name="instructorId" onChange={(e) => handleChange(e)} />
-          <br/>
           <br/>
 
           <button type="submit" class="submit">
