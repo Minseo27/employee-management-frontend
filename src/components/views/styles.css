@@ -285,3 +285,18 @@ font-size: 23px;
 .custom-table td {
 font-size: 20px;
 }
+
+.listStyle {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  color: #e2c102;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.listStyle:hover {
+  transform: scale(0.9);
+  color: #a5901a;
+}

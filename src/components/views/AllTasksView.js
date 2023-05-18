@@ -30,7 +30,7 @@ const AllTasksView = (props) => {
         return (
           <tr key={task.id}>
             <td>
-          <Link to={`/task/${task.id}`}>
+          <Link to={`/task/${task.id}`} class ="listStyle">
             {title}
           </Link>
           </td>
