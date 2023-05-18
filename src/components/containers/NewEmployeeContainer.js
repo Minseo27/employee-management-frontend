@@ -33,6 +33,14 @@ class NewEmployeeContainer extends Component {
           this.setState({error:"Firstname field is required"});
           return;
         }
+        if(this.state.lastname===""){
+          this.setState({error:"Lastname field is required"});
+          return;
+        }
+        if(this.state.department===""){
+          this.setState({error:"Department field is required"});
+          return;
+        }
         let employee = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,

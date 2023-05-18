@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./styles.css";
 
 const AllTasksView = (props) => {
   let {tasks, deleteTask} = props;
@@ -8,28 +9,42 @@ const AllTasksView = (props) => {
     <div>
       <p>There are no tasks.</p>
       <Link to={`/newtask`}>
-        <button>Add New Task</button>
+        <button class="NewTask">Add New Task</button>
       </Link>
     </div>
     );
   }
   
   return (
-    <div>
+    <div className="table">
+      <table className="custom-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
       {tasks.map((task) => {
         let title = task.title;
         return (
-          <div key={task.id}>
-          <Link to={`/task/${task.id}`}>
-            <h1>{title}</h1>
+          <tr key={task.id}>
+            <td>
+          <Link to={`/task/${task.id}`} class ="listStyle">
+            {title}
           </Link>
-          <button onClick={() => deleteTask(task.id)}>Delete</button>
-          </div>
+          </td>
+          <td>
+          <button onClick={() => deleteTask(task.id)} class="DeleteButton">Delete</button>
+          </td>
+          </tr>
         );
       }
       )}
+      </tbody>
+      </table>
       <Link to={`/newtask`}>
-        <button>Add New Task</button>
+        <button class="NewTask">Add New Task</button>
       </Link>
     </div>
   );
