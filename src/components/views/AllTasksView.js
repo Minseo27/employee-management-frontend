@@ -16,19 +16,33 @@ const AllTasksView = (props) => {
   }
   
   return (
-    <div>
+    <div className="table">
+      <table className="custom-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
       {tasks.map((task) => {
         let title = task.title;
         return (
-          <div key={task.id}>
+          <tr key={task.id}>
+            <td>
           <Link to={`/task/${task.id}`}>
-            <h1>{title}</h1>
+            {title}
           </Link>
+          </td>
+          <td>
           <button onClick={() => deleteTask(task.id)} class="DeleteButton">Delete</button>
-          </div>
+          </td>
+          </tr>
         );
       }
       )}
+      </tbody>
+      </table>
       <Link to={`/newtask`}>
         <button class="NewTask">Add New Task</button>
       </Link>
