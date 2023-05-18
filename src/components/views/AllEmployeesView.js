@@ -10,21 +10,35 @@ const AllEmployeesView = (props) => {
   }
 
   return (
-    <div>
+    <div className="table">
+    <table className="custom-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Delete</th>
+          </tr>
+          </thead>
+          <tbody>
       {props.allEmployees.map((employee) => {
         let name = employee.firstname + " " + employee.lastname;
         return (
-          <div key={employee.id}>
+          <tr key={employee.id}>
+            <td>
           <Link to={`/employee/${employee.id}`}>
-            <h1>{name}</h1>
-          </Link>
+            {name}
+          </Link></td>
+          <td>{employee.department}</td>
+          <td>
           <button onClick={() => deleteEmployee(employee.id)} class="DeleteButton">Delete</button>
-          <p>{employee.department}</p>
-        </div>
+          </td>
+          </tr>
         );
 
       })}
-      <Link to={`/newemployee`}>
+      </tbody>
+    </table>
+    <Link to={`/newemployee`}>
         <button class="NewEmployee">Add New Employee</button>
       </Link>
     </div>
