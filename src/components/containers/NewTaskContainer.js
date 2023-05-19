@@ -12,7 +12,8 @@ class NewTaskContainer extends Component {
         this.state = {
           title: "", 
           description: "",
-          location: "", 
+          priority: "",
+          completion: "",
           employeeId: null, 
           redirect: false, 
           redirectId: null,
@@ -36,7 +37,8 @@ class NewTaskContainer extends Component {
         let task = {
             title: this.state.title,
             description: this.state.description,
-            location: this.state.location,
+            priority: this.state.priority,
+            completion: this.state.completion,
             employeeId: this.state.employeeId
         };
         
